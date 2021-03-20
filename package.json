@@ -1,0 +1,76 @@
+{
+  "name": "@4lch4/git-finder",
+  "description": "Finds all directories that contain a git repository within a given directory.",
+  "version": "0.0.0",
+  "author": "4lch4",
+  "scripts": {
+    "postpack": "rm -f oclif.manifest.json",
+    "prepack": "rm -rf dist && tsc -b && oclif-dev manifest && oclif-dev readme",
+    "test": "nyc --extension .ts mocha --forbid-only \"test/**/*.test.ts\"",
+    "postpublish": "yarn pack:all",
+    "version": "oclif-dev readme && git add README.md",
+    "pack:all": "npm run pack:win && npm run pack:mac && npm run pack:linux",
+    "pack:win": "rm -rf ./out/win; oclif-dev pack:win && rsync ./dist/win/*.exe ./out/win",
+    "pack:mac": "rm -rf ./out/macos; oclif-dev pack:macos && rsync -r ./dist/macos ./out",
+    "pack:linux": "rm -rf ./out/linux; oclif-dev pack:linux && rsync -r ./dist/linux ./out",
+    "pub:tar": "ts-node ./.ci/release.ts"
+  },
+  "bugs": "https://github.com/4lch4/git-finder/issues",
+  "dependencies": {
+    "@oclif/command": "^1",
+    "@oclif/config": "^1",
+    "@oclif/plugin-autocomplete": "^0.3.0",
+    "@oclif/plugin-commands": "^1.3.0",
+    "@oclif/plugin-help": "^3",
+    "@oclif/plugin-not-found": "^1.2.4",
+    "cli-table3": "^0.6.0",
+    "dayjs": "^1.10.4",
+    "fs-extra": "^9.1.0",
+    "globby": "^11.0.2",
+    "jsonexport": "^3.2.0",
+    "ora": "^5.4.0",
+    "simple-git": "^2.37.0",
+    "tslib": "^1"
+  },
+  "devDependencies": {
+    "@oclif/dev-cli": "^1",
+    "@oclif/test": "^1",
+    "@types/chai": "^4",
+    "@types/fs-extra": "^9.0.8",
+    "@types/jsonexport": "^3.0.1",
+    "@types/mocha": "^5",
+    "@types/node": "^14.14.35",
+    "chai": "^4",
+    "mocha": "^5",
+    "nyc": "^14",
+    "ts-node": "^8",
+    "typescript": "^3.3"
+  },
+  "bin": {
+    "git-finder": "./bin/run"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "files": [
+    "/bin",
+    "/dist"
+  ],
+  "homepage": "https://github.com/4lch4/git-finder",
+  "keywords": [
+    "oclif"
+  ],
+  "license": "MIT",
+  "main": "dist/index.js",
+  "oclif": {
+    "bin": "git-finder",
+    "plugins": [
+      "@oclif/plugin-autocomplete",
+      "@oclif/plugin-commands",
+      "@oclif/plugin-help",
+      "@oclif/plugin-not-found"
+    ]
+  },
+  "repository": "4lch4/git-finder",
+  "types": "dist/index.d.ts"
+}
