@@ -5,7 +5,8 @@ import { join } from 'path'
 import { ReportUtil } from './lib'
 
 class GitFinder extends Command {
-  static description = 'describe the command here'
+  static description =
+    'Find git repositories, determine if they are up-to-date, and generate a report of the info.'
 
   static flags = {
     version: flags.version({ char: 'v' }),
