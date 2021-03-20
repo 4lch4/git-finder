@@ -1,7 +1,7 @@
 {
   "name": "@4lch4/git-finder",
   "description": "Finds all directories that contain a git repository within a given directory.",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "author": "4lch4",
   "scripts": {
     "postpack": "rm -f oclif.manifest.json",

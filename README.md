@@ -20,7 +20,7 @@ $ npm install -g @4lch4/git-finder
 $ git-finder COMMAND
 running command...
 $ git-finder (-v|--version|version)
-@4lch4/git-finder/0.0.0 darwin-x64 node-v14.16.0
+@4lch4/git-finder/0.0.1 darwin-x64 node-v14.16.0
 $ git-finder --help [COMMAND]
 USAGE
   $ git-finder COMMAND
