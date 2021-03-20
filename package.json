@@ -12,6 +12,7 @@
     "pack:all": "npm run pack:win && npm run pack:mac",
     "pack:win": "rm -rf ./out/win; oclif-dev pack:win && rsync -r ./dist/win/*.exe out/win",
     "pack:mac": "rm -rf ./out/macos; oclif-dev pack:macos && rsync -r ./dist/macos ./out",
+    "pack:deb": "oclif-dev pack:deb && rsync -r ./dist/linux",
     "pub:tar": "ts-node ./.ci/release.ts"
   },
   "bugs": "https://github.com/4lch4/git-finder/issues",
