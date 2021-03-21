@@ -64,10 +64,7 @@
       "@oclif/plugin-help",
       "@oclif/plugin-not-found"
     ],
-    "commands": "dist/commands",
-    "macos": {
-      "identifier": "com.4lch4.git-finder"
-    }
+    "commands": "dist/commands"
   },
   "repository": "4lch4/git-finder",
   "types": "dist/index.d.ts"
