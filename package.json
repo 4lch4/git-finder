@@ -7,12 +7,7 @@
     "postpack": "rm -f oclif.manifest.json",
     "prepack": "rm -rf dist && tsc -b && oclif-dev manifest && oclif-dev readme",
     "test": "nyc --extension .ts mocha --forbid-only \"test/**/*.test.ts\"",
-    "postpublish": "yarn pack:all",
-    "version": "oclif-dev readme && git add README.md",
-    "pack:win": "oclif-dev pack:win && Copy-Item ./dist/win/*.exe ./out/win",
-    "pack:mac": "oclif-dev pack:macos && rsync -r ./dist/macos ./out",
-    "pack:deb": "oclif-dev pack:deb && rsync -r ./dist/linux ./out",
-    "pub:tar": "ts-node ./.ci/release.ts"
+    "version": "oclif-dev readme && git add README.md"
   },
   "bugs": "https://github.com/4lch4/git-finder/issues",
   "dependencies": {
