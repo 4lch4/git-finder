@@ -23,7 +23,7 @@
     "globby": "^11.0.2",
     "jsonexport": "^3.2.0",
     "ora": "^5.4.0",
-    "simple-git": "^2.37.0",
+    "simple-git": "^3.15.0",
     "tslib": "^1"
   },
   "devDependencies": {
